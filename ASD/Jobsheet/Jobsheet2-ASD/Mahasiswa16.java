@@ -4,11 +4,11 @@ public class Mahasiswa16 {
     public Mahasiswa16() {
     }
 
-    public Mahasiswa16(String nm, String nim, String kelas) {
+    public Mahasiswa16(String nm, String nim, double ipk, String kelas) {
         nama = nm;
         this.nim = nim;
         this.kelas = kelas;
-        ipk = 4.0;
+        this.ipk = ipk;
     }
 
     String nama;
