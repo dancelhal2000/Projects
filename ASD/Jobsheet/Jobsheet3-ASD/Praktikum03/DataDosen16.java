@@ -2,7 +2,7 @@ package Praktikum03;
 
 public class DataDosen16 {
     public void dataSemuaDosen(dosen16[] arrayOfDosen) {
-        for (int i = 0; i < arrayOfDosen.length; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Data Dosen ke-" + (i + 1));
             System.out.println("Kode: " + arrayOfDosen[i].kode);
             System.out.println("Nama: " + arrayOfDosen[i].nama);

@@ -22,15 +22,6 @@ public class dosenDemo16 {
             arrayOfDosen[i] = new dosen16(kode, nama, jenisKelamin, usia);
             System.out.println("------------------------------------");
         }
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Data Dosen ke-" + (i + 1));
-            System.out.println("Kode: " + arrayOfDosen[i].kode);
-            System.out.println("Nama: " + arrayOfDosen[i].nama);
-            System.out.println("Jenis Kelamin: " + arrayOfDosen[i].jenisKelami);
-            System.out.println("Usia: " + arrayOfDosen[i].usia);
-            System.out.println("-------------------------------------");
-        }
         DataDosen16 dd = new DataDosen16();
         dd.dataSemuaDosen(arrayOfDosen);
         dd.jumlahDosenPerjenisKelamin(arrayOfDosen);
