@@ -14,7 +14,7 @@ public class TwoSum {
             for (int j = i + 1; j < nums.length; j++) {
                 numJ = nums[j];
                 if (numI + numJ == target) {
-                    return new int[] { nums[i], nums[j] };
+                    return new int[] { i, j };
                 }
             }
         }
