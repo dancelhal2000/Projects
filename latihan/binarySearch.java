@@ -24,11 +24,5 @@ public class binarySearch {
                 } else if (!found) {
                         System.out.println("not found");
                 }
-
-                // find middle of array by averaging
-                // assign y to the result of average
-                // put x, y, z pointers
-                // if target is bigger than key. point z to y-1
-                // if target is smaller than key. point x to y+1
         }
 }
