@@ -82,35 +82,26 @@ public class mainMenu {
                 pilihan = sc.nextInt();
                 switch (pilihan) {
                     case 1:
-                        mhs1.tampilkanMahasiswa();
-                        mhs2.tampilkanMahasiswa();
-                        mhs3.tampilkanMahasiswa();
+                    for(int i = 0; i < pjm.length; i++){
+                        pjm[i].mhs.tampilkanMahasiswa();
+                    }
                         break;
                     case 2:
-                        bk1.tampilkanBuku();
-                        bk2.tampilkanBuku();
-                        bk3.tampilkanBuku();
-                        bk4.tampilkanBuku();
+                        for(int i = 0; i < pjm.length; i++){
+                            pjm[i].bk.tampilkanBuku();
+                        }
                         break;
                     case 3:
-                        pjm[0].hitungDenda();
-                        pjm[1].hitungDenda();
-                        pjm[2].hitungDenda();
-                        pjm[3].hitungDenda();
-                        pjm[4].hitungDenda();
-                        pjm[0].tampilkanPinjaman();
-                        pjm[1].tampilkanPinjaman();
-                        pjm[2].tampilkanPinjaman();
-                        pjm[3].tampilkanPinjaman();
-                        pjm[4].tampilkanPinjaman();
+                        for(int i = 0; i < pjm.length; i++){
+                            pjm[i].hitungDenda();
+                            pjm[i].tampilkanPinjaman();
+                        }
                         break;
                     case 4:
                         InsertionSortbyDenda(pjm);
-                        pjm[0].tampilkanPinjaman();
-                        pjm[1].tampilkanPinjaman();
-                        pjm[2].tampilkanPinjaman();
-                        pjm[3].tampilkanPinjaman();
-                        pjm[4].tampilkanPinjaman();
+                        for(int i = 0; i < pjm.length; i++){
+                            pjm[i].tampilkanPinjaman();
+                        }
                         break;
                     case 5:
                         System.out.println("Masukkan NIM yang ingin dicari: ");
