@@ -52,10 +52,37 @@ public class StackTugasMahasiswa16 {
         }
     }
 
+    public Mahasiswa16 peekBottom() {
+    if (!isEmpty()) {
+        return stack[0]; 
+    } else {
+        System.out.println("Stack kosong!");
+        return null;
+    }
+}
+
+public void hitungStack() {
+    System.out.println("Jumlah tugas: " + (top + 1));
+}
+
+public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi16 stackKonv = new StackKonversi16();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stackKonv.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stackKonv.isEmpty()) {
+            biner += stackKonv.pop();
+        }
+        return biner;
+    }
+
     public void printStack() {
         if (!isEmpty()) {
             for (int i = top; i >= 0; i--) {
-                System.out.println(stack[i].NIM + "\t" + stack[i].nama + "\t" + stack[i].kelas + "\t" + stack[i].nilai);
+                System.out.println(stack[i].NIM + "\t" + stack[i].nama + "\t" + stack[i].kelas);
             }
         } else {
             System.out.println("");

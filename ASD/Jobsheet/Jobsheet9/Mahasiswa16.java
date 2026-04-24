@@ -11,7 +11,7 @@ public class Mahasiswa16 {
         this.NIM = nim;
         this.nama = nama;
         this.kelas = kelas;
-        nilai = -1;
+        this.nilai = -1;
     }
 
     void tugasDiNilai(int nilai) {
