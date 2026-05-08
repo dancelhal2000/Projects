@@ -1,5 +1,4 @@
-package latihanASD;
-
+package latihan;
 import java.util.Scanner;
 
 public class filmScore {

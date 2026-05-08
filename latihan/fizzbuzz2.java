@@ -1,4 +1,4 @@
-package latihanASD;
+package latihan;
 
 public class fizzbuzz2 {
     public static void main(String[] args) {

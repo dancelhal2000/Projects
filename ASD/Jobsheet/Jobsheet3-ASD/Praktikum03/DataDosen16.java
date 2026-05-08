@@ -1,5 +1,4 @@
 package Praktikum03;
-
 public class DataDosen16 {
     public void dataSemuaDosen(dosen16[] arrayOfDosen) {
         for (int i = 0; i < 3; i++) {
