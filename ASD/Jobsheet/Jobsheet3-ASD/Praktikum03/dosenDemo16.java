@@ -1,5 +1,4 @@
 package Praktikum03;
-
 import java.util.Scanner;
 
 public class dosenDemo16 {
