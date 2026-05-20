@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class main {
-    static DoubleLinkedList dllPembeli = new DoubleLinkedList();
-    static DoubleLinkedList dllPesanan = new DoubleLinkedList();
+    static dLLPembeli dllPembeli = new dLLPembeli();
+    static dLLPesanan dllPesanan = new dLLPesanan();
     static Scanner sc = new Scanner(System.in);
 
     public static void menu() {
@@ -18,36 +18,54 @@ public class main {
     }
 
     public static void main(String[] args) {
+        int indeksPesanan = 0;
+        pesanan[] p = new pesanan[3];
+        p[0] = new pesanan(1, "Nasi Goreng", 10000);
+        p[1] = new pesanan(2, "Mie Goreng", 12000);
+        p[2] = new pesanan(3, "Ayam Bakar", 15000);
+
+        int indeksPembeli = 0;
+        pembeli[] pb = new pembeli[4];
+        pb[0] = new pembeli("Ainra", "084222345566");
+        pb[1] = new pembeli("Danra", "084345464646");
+        pb[2] = new pembeli("Sanri", "084443445456");
+        pb[3] = new pembeli("Vania", "084334545454");
+
         int pilihan = 0;
         while (pilihan != 5) {
             menu();
             pilihan = sc.nextInt();
             switch (pilihan) {
                 case 1:
-                    pembeli pb1 = new pembeli("Vania", "084222345566");
-                    pembeli pb2 = new pembeli("Danra", "084345464646");
-                    pembeli pb3 = new pembeli("Sanri", "084443445456");
-                    pembeli pb4 = new pembeli("Ainra", "084334545454");
-                    dllPembeli.addFirst(pb1);
-                    dllPembeli.addFirst(pb2);
-                    dllPembeli.addFirst(pb3);
-                    dllPembeli.addFirst(pb4);
-                    dllPembeli.print();
+                    if (indeksPembeli < 4) {
+                        dllPembeli.addLast(pb[indeksPembeli]);
+                        System.out.println("Data " + pb[indeksPembeli].namaPembeli + " berhasil ditambahkan.");
+                        indeksPembeli++;
+                    } else {
+                        System.out.println("Antrian penuh.");
+                    }
                     break;
                 case 2:
-                    dllPembeli.printReverse();
+                    dllPembeli.print();
                     break;
                 case 3:
-                    dllPembeli.removeFirst();
-                    pesanan p1 = new pesanan(1, "Nasi Goreng", 10000);
-                    pesanan p2 = new pesanan(2, "Mie Goreng", 12000);
-                    pesanan p3 = new pesanan(3, "Ayam Bakar", 15000);
-                    dllPesanan.addFirst(p1);
-                    dllPesanan.addFirst(p2);
-                    dllPesanan.addFirst(p3);
-                    dllPesanan.print();
+                    if (dllPembeli.isEmpty()) {
+                        System.out.println("Antrian kosong.");
+                        break;
+                    }
+                    if (indeksPesanan < 3) {
+                        dllPesanan.addLast(p[indeksPesanan]);
+                        System.out.println(dllPembeli.head.data.namaPembeli + " berhasil memesan.");
+                        dllPembeli.removeFirst();
+                        indeksPesanan++;
+                    } else {
+                        System.out.println("Pesanan penuh.");
+                        dllPembeli.removeFirst();
+                    }
                     break;
                 case 4:
+                    dllPesanan.Sorting();
+                    dllPesanan.print();
                     break;
                 case 5:
                     System.out.println("Terimakasih!");

@@ -1,8 +1,8 @@
-public class DoubleLinkedList {
-    node head;
-    node tail;
+public class dLLPesanan {
+    nodePesanan head;
+    nodePesanan tail;
 
-    public DoubleLinkedList() {
+    public dLLPesanan() {
         head = null;
         tail = null;
     }
@@ -11,8 +11,8 @@ public class DoubleLinkedList {
         return head == null;
     }
 
-    public void addFirst(pembeli data) {
-        node newNode = new node(data);
+    public void addFirst(pesanan data) {
+        nodePesanan newNode = new nodePesanan(data);
         if (isEmpty()) {
             head = tail = newNode;
         } else {
@@ -22,8 +22,8 @@ public class DoubleLinkedList {
         }
     }
 
-    public void addLast(pembeli data) {
-        node newNode = new node(data);
+    public void addLast(pesanan data) {
+        nodePesanan newNode = new nodePesanan(data);
         if (isEmpty()) {
             head = tail = newNode;
         } else {
@@ -38,7 +38,7 @@ public class DoubleLinkedList {
             System.out.println("Linked List masih kosong.");
             return;
         }
-        node current = head;
+        nodePesanan current = head;
         while (current != null) {
             current.data.tampil();
             current = current.next;
@@ -50,7 +50,7 @@ public class DoubleLinkedList {
             System.out.println("Linked List masih kosong.");
             return;
         }
-        node current = tail;
+        nodePesanan current = tail;
         while (current != null) {
             current.data.tampil();
             current = current.prev;
@@ -63,10 +63,10 @@ public class DoubleLinkedList {
             return;
         }
         if (head == tail) {
-            System.out.println("Data " + head.data.namaPembeli + " berhasil dihapus.");
+            System.out.println("Data " + head.data.namaPesanan + " berhasil dihapus.");
             head = tail = null;
         } else {
-            System.out.println("Data " + head.data.namaPembeli + " berhasil dihapus.");
+            System.out.println("Data " + head.data.namaPesanan + " berhasil dihapus.");
             head = head.next;
             head.prev = null;
         }
@@ -78,12 +78,35 @@ public class DoubleLinkedList {
             return;
         }
         if (head == tail) {
-            System.out.println("Data " + tail.data.namaPembeli + " berhasil dihapus.");
+            System.out.println("Data " + tail.data.namaPesanan + " berhasil dihapus.");
             head = tail = null;
         } else {
-            System.out.println("Data " + tail.data.namaPembeli + " berhasil dihapus.");
+            System.out.println("Data " + tail.data.namaPesanan + " berhasil dihapus.");
             tail = tail.prev;
             tail.next = null;
         }
+    }
+
+    public void Sorting() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        boolean swapped;
+        nodePesanan current;
+
+        do {
+            swapped = false;
+            current = head;
+            while (current.next != null) {
+                if (current.data.namaPesanan.compareToIgnoreCase(current.next.data.namaPesanan) > 0) {
+                    pesanan temp = current.data;
+                    current.data = current.next.data;
+                    current.next.data = temp;
+                    swapped = true;
+                }
+                current = current.next;
+            }
+        } while (swapped);
     }
 }
